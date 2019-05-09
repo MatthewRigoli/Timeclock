@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Time Clock</title>
-    <link rel="stylesheet" type="text/css" href="calendar.css">
+    <link rel="stylesheet" type="text/css" href="timeclock.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -16,7 +16,8 @@
         <input type="submit" name="clockOut" id="clockOut" value="Clock Out" /><br/>
     </form>
     <?php 
-        include 'calendar.php';
+        include 'timeclock.php';
+        include 'sqlitedb.php';
         ?>
     <?php 
         $test = new Timeclock();
@@ -27,10 +28,6 @@
             $test->clockOut();
         }
         */
-        $test->clockIn();
-        $test->calculateWorkTime();
-        $test->clockOut();
-        $test->calculateWorkTime();
         ?>
 </body>
 </html>
