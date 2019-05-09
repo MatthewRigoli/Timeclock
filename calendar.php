@@ -10,7 +10,6 @@ class Timeclock {
      private $clockInTime = 0;
      private $clockOutTime = 0;
      private $clockedIn = false;
-     private $clockedOut = true;
      private $outHour = 0;
      private $inHour = 0;
      private $outMinute = 0;
@@ -27,7 +26,6 @@ class Timeclock {
          }
          else {
              $this->clockedIn = true;
-             $this->clockedOut = false;
              $this->clockInTime = date("h:i a m-d-Y");
 
              print "<script type='text/javascript'>alert(\"You clocked in at: $this->clockInTime\");</script>";
@@ -35,24 +33,23 @@ class Timeclock {
      }
 
      public function clockOut() {
-        if($this->clockedOut == true ){
+        if($this->clockedIn == false ){
            print "<script type='text/javascript'>alert(\"You are already clocked out\");</script>";
         }
         else {
             $this->clockedIn = false;
-            $this->clockedOut = true;
             $this->clockOutTime = date("h:i m-d-Y");
 
             print "<script type='text/javascript'>alert(\"You clocked out at: $this->clockOutTime\");</script>";
         }
     }
     public function calculateWorkTime(){
-        if ($this->clockedIn == true && $this->clockedOut == false){
+        if ($this->clockedIn == true){
             $this->inDay = date("d");
             $this->inHour = date("H");
             $this->inMinute = date("i");
         }
-        else if($this->clockedIn == false  && $this->clockedOut == true){
+        else if($this->clockedIn == false){
             $this->outDay = date("d");
             $this->outHour = date("H");
             $this->outMinute = date("i");

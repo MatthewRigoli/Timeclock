@@ -28,7 +28,6 @@
         }
         */
         $test->clockIn();
-        sleep(2*60);
         $test->calculateWorkTime();
         $test->clockOut();
         $test->calculateWorkTime();
