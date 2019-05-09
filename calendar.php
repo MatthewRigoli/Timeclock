@@ -1,5 +1,6 @@
 <?php
 class Timeclock {  
+    //made a change
      
      public function __construct(){     
          $this->naviHref = htmlentities($_SERVER['PHP_SELF']);
