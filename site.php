@@ -1,7 +1,7 @@
 <!DOCTYPE <!DOCTYPE html>
 <html>
 <head>
-    <link type="text/css" media="screen" href="calendar.css">
+    <link type="text/css" media="screen" href="timeclock.css">
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Time Clock</title>
@@ -17,6 +17,8 @@
     </form>
     <?php 
         include 'calendar.php';
+        ?>
+    <?php 
         $test = new Timeclock();
         /*if(array_key_exists('clockIn', $_POST)){
             $test->clockIn();
