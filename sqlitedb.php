@@ -8,10 +8,10 @@
    if(!$db) {
       echo $db->lastErrorMsg();
    } else {
-      echo "Opened database successfully\n";
+      echo "Opened database successfully <br>";
    }
 
-   $sql =<<<EOF
+   /*$sql =<<<EOF
       CREATE TABLE USERINFO
       (ID INT PRIMARY KEY     NOT NULL,
       USERNAME       TEXT     NOT NULL,
@@ -25,5 +25,43 @@ EOF;
    } else {
       echo "Table created successfully\n";
    }
+   $db->close();
+   */
+
+  /*$sql =<<<EOF
+  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
+  VALUES (1, 'Matt', 'Tacocatman12', '0');
+
+  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
+  VALUES (2, 'Mike', 'Tacocatman122', '1');
+
+  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
+  VALUES (3, 'Jay', 'Tacocatman1222', '0');
+
+  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
+  VALUES (4, 'Justin', 'Tacocatman12222', '1');
+EOF;
+
+$ret = $db->exec($sql);
+if(!$ret) {
+  echo $db->lastErrorMsg();
+} else {
+  echo "Records created successfully\n";
+}
+$db->close();
+*/
+
+$sql =<<<EOF
+      SELECT * from USERINFO;
+EOF;
+
+   $ret = $db->query($sql);
+   while($row = $ret->fetchArray(SQLITE3_ASSOC) ) {
+      echo "ID = ". $row['ID'] . "\n";
+      echo "USERNAME = ". $row['USERNAME'] ."\n";
+      echo "PASSWORD = ". $row['PASSWORD'] ."\n";
+      echo "CLOCKEDIN = ".$row['CLOCKEDIN'] ."<br><br>";
+   }
+   echo "Operation done successfully\n";
    $db->close();
 ?>
