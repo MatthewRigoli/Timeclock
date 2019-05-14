@@ -15,8 +15,8 @@
    /*$sql =<<<EOF
       CREATE TABLE USERINFO
       (ID INT PRIMARY KEY     NOT NULL,
-      USERNAME       TEXT     NOT NULL,
-      PASSWORD       TEXT     NOT NULL,
+      USERNAME       VARCHAR  NOT NULL,
+      PASSWORD       VARCHAR  NOT NULL,
       CLOCKEDIN      INT      NOT NULL);
 EOF;
 
@@ -31,14 +31,14 @@ EOF;
 
 //adds values to the table 
 /*$id = 5;
-$name = "McKinnin";
+$name = 'McKinnin';
 $password = 'Tacocatman122222';
 $clockedin = 0;
 
    $sql =<<<EOF
 
   INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
-  VALUES ($id, 'McKinnin', 'coolguy', $clockedin);
+  VALUES ($id, 'McKinnin', 'CoolGuy', $clockedin);
 EOF;
 
 $ret = $db->exec($sql);
