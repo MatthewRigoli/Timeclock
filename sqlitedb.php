@@ -28,18 +28,15 @@ EOF;
    $db->close();
    */
 
-  /*$sql =<<<EOF
-  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
-  VALUES (1, 'Matt', 'Tacocatman12', '0');
+/*$id = 5;
+$name = "McKinnin";
+$password = 'Tacocatman122222';
+$clockedin = 0;
+
+   $sql =<<<EOF
 
   INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
-  VALUES (2, 'Mike', 'Tacocatman122', '1');
-
-  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
-  VALUES (3, 'Jay', 'Tacocatman1222', '0');
-
-  INSERT INTO USERINFO (ID,USERNAME,PASSWORD,CLOCKEDIN)
-  VALUES (4, 'Justin', 'Tacocatman12222', '1');
+  VALUES ($id, 'McKinnin', 'coolguy', $clockedin);
 EOF;
 
 $ret = $db->exec($sql);
@@ -64,4 +61,5 @@ EOF;
    }
    echo "Operation done successfully\n";
    $db->close();
+   
 ?>
