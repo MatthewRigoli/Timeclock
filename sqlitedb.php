@@ -11,6 +11,7 @@
       echo "Opened database successfully <br>";
    }
 
+   //initializes the table within the database
    /*$sql =<<<EOF
       CREATE TABLE USERINFO
       (ID INT PRIMARY KEY     NOT NULL,
@@ -28,6 +29,7 @@ EOF;
    $db->close();
    */
 
+//adds values to the table 
 /*$id = 5;
 $name = "McKinnin";
 $password = 'Tacocatman122222';
@@ -48,6 +50,7 @@ if(!$ret) {
 $db->close();
 */
 
+//displays the contents of the table
 $sql =<<<EOF
       SELECT * from USERINFO;
 EOF;
